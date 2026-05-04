@@ -12,6 +12,12 @@ app.use(express.json());
 app.use(cors({ origin: '*' }));
 
 
+// ✅ ADD IT HERE
+app.get('/', (req, res) => {
+  res.send('Server is running 🚀');
+});
+
+
 const PORT = process.env.PORT;
 
 //importing routs

@@ -1,13 +1,23 @@
-import { API_BASE_URL as ENV_API_BASE_URL, BASE_URL as ENV_BASE_URL } from "@env";
+// Production backend URL
+const PRODUCTION_BASE_URL = 'http://172.20.10.7:3000';
+const PRODUCTION_API_BASE_URL = `${PRODUCTION_BASE_URL}/api`;
 
-// API Configuration
-// When running on a real device, use the local network IP in .env.
-const API_BASE_URL = ENV_API_BASE_URL || 'http://localhost:3000/api';
-const BASE_URL = ENV_BASE_URL || 'http://localhost:3000';
+// Try to import from @env, but catch errors if it fails
+let ENV_API_BASE_URL, ENV_BASE_URL;
+try {
+  const envVars = require('@env');
+  ENV_API_BASE_URL = envVars.API_BASE_URL;
+  ENV_BASE_URL = envVars.BASE_URL;
+} catch (e) {
+  // @env not available in web build
+}
+
+// Always use production URL for deployed builds
+const API_BASE_URL = PRODUCTION_API_BASE_URL;
+const BASE_URL = PRODUCTION_BASE_URL;
 
 export { API_BASE_URL, BASE_URL };
 
-// Fallback for development (only used if @env doesn't provide values)
 export const CONFIG = {
   API_BASE_URL,
   BASE_URL,

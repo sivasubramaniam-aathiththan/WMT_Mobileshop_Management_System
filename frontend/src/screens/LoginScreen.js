@@ -19,7 +19,7 @@ export default function LoginScreen({ navigation }) {
     if (!email || !password) { setError("Please fill in all fields."); return; }
     setLoading(true);
     try {
-      const res = await axios.post(`${API_BASE_URL}/user/login`, { email, password }, { timeout: 10000 });
+      const res = await axios.post(`${API_BASE_URL}/user/login`, { email, password }, { timeout: 60000 });
       await login(res.data.token, res.data.user);
     } catch (err) {
       if (err.code === 'ECONNABORTED' || err.message?.includes('timeout')) {
