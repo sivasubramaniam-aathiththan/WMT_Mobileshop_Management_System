@@ -1,5 +1,5 @@
 // Production backend URL
-const PRODUCTION_BASE_URL = 'http://172.20.10.7:3000';
+const PRODUCTION_BASE_URL = 'https://wmt-mobileshop-management-system.onrender.com';
 const PRODUCTION_API_BASE_URL = `${PRODUCTION_BASE_URL}/api`;
 
 // Try to import from @env, but catch errors if it fails
