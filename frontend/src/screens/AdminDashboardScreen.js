@@ -216,6 +216,7 @@ export default function AdminDashboardScreen({ navigation }) {
                 </View>
               ))}
 
+
               <TouchableOpacity
                 style={[s.submitBtn, addLoading && { opacity: 0.6 }]}
                 onPress={handleAddProduct}
