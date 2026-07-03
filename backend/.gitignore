@@ -1,0 +1,43 @@
+# Environment variables - NEVER push these to GitHub
+.env
+.env.local
+.env.*.local
+
+# Keep the template file so others know what variables are needed
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build folders
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Coverage directory used by tools like istanbul
+coverage/
