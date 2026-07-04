@@ -9,7 +9,9 @@ const app = express();
 //middleware
 app.use(express.json());
 
-app.use(cors({ origin: '*' }));
+app.use(cors({
+    origin: "https://wmt-mobileshop-management-system-1.onrender.com" 
+}));
 
 
 const PORT = process.env.PORT;
@@ -35,5 +37,3 @@ app.listen(PORT, '0.0.0.0', () => {
   connectDB();  
 });
 
-console.log("EMAIL:", process.env.EMAIL_USER);
-console.log("DB:", process.env.DB);
